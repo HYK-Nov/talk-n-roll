@@ -1,0 +1,13 @@
+.sidebar {
+  width: 20%;
+  height: 100vh;
+  top: 0;
+  padding: 5rem 2rem 2rem;
+  position: sticky;
+  overflow: auto;
+  // 드래그 방지
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}

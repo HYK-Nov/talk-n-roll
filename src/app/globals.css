@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+textarea {
+    resize: none;
+}
+
+/*
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -31,3 +37,4 @@ body {
     text-wrap: balance;
   }
 }
+*/
