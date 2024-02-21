@@ -24,9 +24,9 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
                 {/* 좌측 */}
                 <LeftSidebar/>
                 {/* 컨텐츠 */}
-                <div className={"flex-auto px-8 py-20"}>
+                <main className={"flex-auto px-8 py-20"}>
                     {children}
-                </div>
+                </main>
                 {/* 우측 */}
                 <RightSideBar/>
             </div>

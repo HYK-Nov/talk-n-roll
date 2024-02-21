@@ -1,10 +1,10 @@
-import style from "../../style/sidebar.module.scss"
+import "../../style/sidebar.scss";
 
 function RightSideBar() {
     return (
-        <div className={`border-l ${style.sidebar}`}>
+        <nav className={"sidebar border-l"}>
             Right Sidebar
-        </div>
+        </nav>
     );
 }
 

@@ -1,6 +1,15 @@
+"use client";
 import Link from "next/link";
+import TextEditor from "@/components/roll/TextEditor";
+import {useState} from "react";
 
-function Page({params}: { params: { id: number } }) {
+interface IProps {
+    id: number;
+}
+
+function Page({params}: { params: IProps }) {
+    const [comment, setComment] = useState("");
+
     return (
         <div className={"flex flex-col space-y-4"}>
             <div>
@@ -10,9 +19,8 @@ function Page({params}: { params: { id: number } }) {
             <p className={"text-2xl font-bold pb-2"}>제목</p>
             <p>Post: {params.id}</p>
 
-            <form>
-                <textarea spellCheck={"false"}
-                          className={"border outline-green-400 w-full rounded-md p-4 h-36 text-sm"}/>
+            <form className={"space-y-2"}>
+                <TextEditor setValue={setComment}/>
                 <div className={"flex justify-end"}>
                     <button type={"submit"}
                             className={"bg-green-400 hover:bg-green-500 p-2.5 rounded-md " +

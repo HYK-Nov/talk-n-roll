@@ -1,9 +1,9 @@
 'use client'
 import {useLoginModalStore} from "@/store/loginModal";
-import style from "../../style/sidebar.module.scss"
-import Link from "next/link";
+import "../../style/sidebar.scss";
+import SubMenu from "@/components/sidebar/SubMenu";
 
-const categories = [
+const topic = [
     {link: "test", name: "test"},
     {link: "roll", name: "roll"}
 ];
@@ -11,20 +11,10 @@ const categories = [
 function LeftSidebar() {
     const loginState = useLoginModalStore();
 
-    console.log(loginState.login);
-
     return (
-        <div className={`border-r ${style.sidebar}`}>
-            <ul>
-                {categories.map((value, index) => (
-                    <Link href={`/${value.link}`} key={index}>
-                        <li className={"bg-amber-300 flex my-3 p-3 rounded-md"}>
-                            <p>{value.name}</p>
-                        </li>
-                    </Link>
-                ))}
-            </ul>
-        </div>
+        <nav className={"sidebar border-r"}>
+            <SubMenu name={"주제"} menu={topic}/>
+        </nav>
     );
 }
 

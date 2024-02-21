@@ -9,7 +9,7 @@ function Header() {
     return (
         <header className={"fixed top-0 left-0 h-14 w-full z-50 border-b px-3 bg-white dark:bg-slate-700"}>
             <div className={"flex container justify-between"}>
-                <Link href={"/"} className={"font-black text-xl"}>LOGO</Link>
+                <Link href={"/"} className={"font-black text-xl"}>TALK N ROLL</Link>
                 <LoginModal/>
 
                 {/* 로그인 버튼 */}
