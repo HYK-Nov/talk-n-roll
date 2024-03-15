@@ -6,5 +6,7 @@ interface IProps {
 }
 
 export async function GET(request: Request, {params}: { params: IProps }) {
-    return NextResponse.json({ hello: "Next.js" });
+    const {rows} = await sql`SELECT * from Rolls WHERE id=${params.id}`;
+
+    return Response.json(rows);
 }

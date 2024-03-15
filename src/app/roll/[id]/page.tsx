@@ -1,19 +1,18 @@
 import Link from "next/link";
 import CommentEditor from "@/components/roll/CommentEditor";
+import {IRoll} from "../../../../type/roll.interfaces";
 
 interface IProps {
     id: number;
 }
 
-export default async function Page({params}: { params: IProps}) {
-    const getRolls = async () => {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/roll`);
+export default async function Page({params}: { params: IProps }) {
+    const getRoll = async () => {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/roll/${params.id}`, {next: {revalidate: 3600}});
         return res.json();
     }
-    const data = await getRolls();
 
-    console.log(data);
-
+    const data: IRoll[] = await getRoll();
     let comment = "";
 
     return (
@@ -22,8 +21,8 @@ export default async function Page({params}: { params: IProps}) {
                 <Link href={"/roll"} className={"text-xs"}>게시판으로 돌아가기</Link>
             </div>
 
-            <p className={"text-2xl font-bold pb-2"}>제목</p>
-            <p>Post: {params.id}</p>
+            <p className={"text-2xl font-bold pb-2"}>{data[0].title}</p>
+            <p>{data[0].content}</p>
 
             <form className={"space-y-2"}>
                 <CommentEditor rollId={params.id}/>

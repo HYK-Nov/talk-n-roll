@@ -1,7 +1,16 @@
 import PostLink from "@/components/roll/PostLink";
 import Link from "next/link";
+import {IRoll} from "../../../type/roll.interfaces";
 
-function Page() {
+export default async function Page() {
+    const getRows = async () => {
+        const res = await fetch(`http://localhost:3000/api/roll`, {next: {revalidate: 3600}});
+        return res.json();
+    }
+
+    const data: IRoll[] = await getRows();
+
+    console.log(data);
 
     return (
         <main>
@@ -13,13 +22,9 @@ function Page() {
 
             <ul className={"divide-y"}>
                 {
-                    [...Array(10)].map((_, idx) => (
-                        <PostLink id={idx + 1} key={idx}/>
-                    ))
+                    data.map((item, idx) => (<PostLink props={item} key={idx}/>))
                 }
             </ul>
         </main>
     );
 }
-
-export default Page;
