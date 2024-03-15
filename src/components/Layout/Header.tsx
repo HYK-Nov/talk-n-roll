@@ -7,8 +7,8 @@ function Header() {
     const loginModalState = useLoginModalStore();
 
     return (
-        <header className={"fixed top-0 left-0 h-14 w-full z-50 border-b px-3 bg-white dark:bg-slate-700"}>
-            <div className={"flex container justify-between"}>
+        <header className={"fixed top-0 left-0 w-full z-50 border-b px-3 bg-white dark:bg-slate-700"}>
+            <div className={"h-14 flex container justify-between items-center"}>
                 <Link href={"/"} className={"font-black text-xl"}>TALK N ROLL</Link>
                 <LoginModal/>
 

@@ -8,7 +8,7 @@ interface IProps {
 }
 
 function SubMenu({name, menu}: IProps) {
-    const [opened, setOpened] = useState(false);
+    const [opened, setOpened] = useState(true);
 
     return (
         <>
