@@ -1,18 +1,14 @@
 import Link from "next/link";
 import CommentEditor from "@/components/roll/CommentEditor";
-import {IRoll} from "../../../../type/roll.interfaces";
+import {IRoll} from "@/type/roll.interfaces";
+import {getRoll} from "@/services/rolls";
 
 interface IProps {
     id: number;
 }
 
 export default async function Page({params}: { params: IProps }) {
-    const getRoll = async () => {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/roll/${params.id}`, {next: {revalidate: 3600}});
-        return res.json();
-    }
-
-    const data: IRoll[] = await getRoll();
+    const data: IRoll[] = await getRoll(params.id);
     let comment = "";
 
     return (

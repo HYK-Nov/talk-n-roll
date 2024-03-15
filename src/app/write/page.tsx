@@ -21,7 +21,7 @@ function Page() {
 
             <input className={"w-full border border-slate-700/20 outline-1 outline-green-400 rounded-md p-2 text-sm"}
                    placeholder={"제목"}/>
-            <CommentEditor setValue={setComment}/>
+            {/*<CommentEditor setValue={setComment}/>*/}
 
             <div className={"flex justify-end"}>
                 <button type={"submit"}

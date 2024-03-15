@@ -1,16 +1,10 @@
 import PostLink from "@/components/roll/PostLink";
 import Link from "next/link";
-import {IRoll} from "../../../type/roll.interfaces";
+import {IRoll} from "@/type/roll.interfaces";
+import {getRolls} from "@/services/rolls";
 
 export default async function Page() {
-    const getRows = async () => {
-        const res = await fetch(`http://localhost:3000/api/roll`, {next: {revalidate: 3600}});
-        return res.json();
-    }
-
-    const data: IRoll[] = await getRows();
-
-    console.log(data);
+    const data: IRoll[] = await getRolls();
 
     return (
         <main>

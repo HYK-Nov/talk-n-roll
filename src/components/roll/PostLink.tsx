@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {IRoll} from "../../../type/roll.interfaces";
+import {IRoll} from "@/type/roll.interfaces";
 
 function PostLink({props}: {props:IRoll}) {
     return (
