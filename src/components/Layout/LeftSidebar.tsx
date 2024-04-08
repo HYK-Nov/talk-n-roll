@@ -1,6 +1,6 @@
 'use client'
 import {useLoginModalStore} from "@/store/loginModal";
-import "../../style/sidebar.scss";
+import "@/styles/sidebar.scss";
 import SubMenu from "@/components/sidebar/SubMenu";
 
 const topic = [

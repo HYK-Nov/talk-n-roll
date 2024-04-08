@@ -1,7 +1,7 @@
 import PostLink from "@/components/roll/PostLink";
 import Link from "next/link";
 import {IRoll} from "@/type/roll.interfaces";
-import {getRolls} from "@/services/rolls";
+import {getRolls} from "@/lib/rolls";
 
 export default async function Page() {
     const data: IRoll[] = await getRolls();

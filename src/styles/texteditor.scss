@@ -1,4 +1,7 @@
 textarea {
+  resize: none;
+  min-height: 4rem;
+
   &::-webkit-scrollbar {
     width: 0.4rem;
   }

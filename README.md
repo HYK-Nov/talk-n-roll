@@ -1,5 +1,6 @@
 - Next.js
 - tailwind css
+- Shadcn
 - Zustand
 - Vercel
 
